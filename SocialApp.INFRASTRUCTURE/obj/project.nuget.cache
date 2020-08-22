@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mrHeG0T73YMyqEJD23zdM6CNQgswdWSNq1jJ4qfiHESqCvU5aoTxwBb334l91u0N+IuCh3lKAoU9Z1AfSRWvVg==",
+  "dgSpecHash": "OBvkxMhOpwUoHjiFspMrxQ8KuP6iguogaO/jmLf/QK/zyxSQRq6MDQ5bkPgiB+8cUJFNhcX5zWCNRY8bdnqnPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tomek\\source\\repos\\SocialApp\\SocialApp.INFRASTRUCTURE\\SocialApp.INFRASTRUCTURE.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tomek\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512"
+    "C:\\Users\\Tomek\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
+    "C:\\Users\\Tomek\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
   ],
   "logs": []
 }
