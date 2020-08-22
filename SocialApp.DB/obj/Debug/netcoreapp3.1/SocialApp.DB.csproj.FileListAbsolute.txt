@@ -1,0 +1,9 @@
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\bin\Debug\netcoreapp3.1\SocialApp.DB.deps.json
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\bin\Debug\netcoreapp3.1\SocialApp.DB.dll
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.csprojAssemblyReference.cache
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.AssemblyInfoInputs.cache
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.AssemblyInfo.cs
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.csproj.CoreCompileInputs.cache
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\bin\Debug\netcoreapp3.1\SocialApp.DB.pdb
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.dll
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.DB\obj\Debug\netcoreapp3.1\SocialApp.DB.pdb
