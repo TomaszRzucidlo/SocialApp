@@ -4,7 +4,10 @@ using System.Text;
 
 namespace SocialApp.INFRASTRUCTURE.Resonses
 {
-    class FriendResponse
+    public class FriendResponse
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Image { get; set; }
     }
 }

@@ -101,7 +101,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Tomek\\source\\repos\\SocialApp\\SocialApp.DB\\SocialApp.DB.csproj": {
+                "projectPath": "C:\\Users\\Tomek\\source\\repos\\SocialApp\\SocialApp.DB\\SocialApp.DB.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -133,6 +137,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

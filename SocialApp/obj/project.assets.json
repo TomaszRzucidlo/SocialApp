@@ -342,7 +342,8 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Autofac": "5.2.0",
-          "MediatR": "8.1.0"
+          "MediatR": "8.1.0",
+          "SocialApp.DB": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SocialApp.INFRASTRUCTURE.dll": {}

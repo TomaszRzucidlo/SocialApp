@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SocialApp.INFRASTRUCTURE.Commands;
 using SocialApp.INFRASTRUCTURE.Queries;
 
 namespace SocialApp.API.Controllers
@@ -33,6 +34,12 @@ namespace SocialApp.API.Controllers
             var result = await mediator.Send(query);
 
             return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddFriend([FromBody] CreateFriendConnectionCommand command)
+        {
+            var result = await mediator.Send(command);
         }
     }
 }
