@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SocialApp.DB\SocialApp.DB.csproj" />
+    <ProjectReference Include="..\SocialApp.INFRASTRUCTURE\SocialApp.INFRASTRUCTURE.csproj" />
   </ItemGroup>
 
 

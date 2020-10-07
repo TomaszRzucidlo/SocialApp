@@ -12,13 +12,13 @@ namespace SocialApp.DB.Repositories.Concrete
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        private readonly IDbContext dbContext;
+        private readonly DbContext context;
         private readonly DbSet<T> dbSet;
 
-        public Repository(IDbContext dbContext)
+        public Repository(DbContext context)
         {
-            this.dbContext = dbContext;
-            dbSet = dbContext.Set<T>();
+            this.context = context;
+            dbSet = context.Set<T>();
         }
 
         public async Task<IList<T>> GetListAsync()

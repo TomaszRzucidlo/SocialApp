@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialApp.DB.Domain.Abstract
+namespace SocialApp.DB.Entities.Abstract
 {
     public class Entity
     {
-        public string Guid { get; protected set; }
+        public Guid Id { get; protected set; }
     }
 }

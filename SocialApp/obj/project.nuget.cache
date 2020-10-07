@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "MgdgOkwm53LKOcZnbJum/9l6NqIEUpnXDRyAKdvn6cvAknLhG2Yb/olv6+OpnhU5jxjly36rRvtX5+YlkJZf8A==",
+  "dgSpecHash": "nqpxAQqozveDLYyrzbWzn4+EYld1zoDr18GGht3A7UbLDIvOaaO1fYMnPugbZGcB/LCZNu161OLNSLVkc5v5jQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tomek\\source\\repos\\SocialApp\\SocialApp\\SocialApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tomek\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
+    "C:\\Users\\Tomek\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\Tomek\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\Tomek\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Tomek\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\Tomek\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.0\\microsoft.entityframeworkcore.3.1.0.nupkg.sha512",
