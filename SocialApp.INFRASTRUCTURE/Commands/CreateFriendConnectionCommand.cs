@@ -8,6 +8,6 @@ namespace SocialApp.INFRASTRUCTURE.Commands
 {
     public class CreateFriendConnectionCommand : IRequest<FriendResponse>
     {
-        public string FriendGuid { get; set; }
+        public Guid FriendId { get; set; }
     }
 }

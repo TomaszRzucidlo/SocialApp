@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SocialApp.DB.Domain.Concrete;
 using SocialApp.DB.Entities;
 using SocialApp.DB.Repositories.Abstract;
 using System;
@@ -9,9 +10,9 @@ namespace SocialApp.DB.Repositories.Concrete
 {
     public class FriendRepository : Repository<Friend>, IFriendRepository
     {
-        private readonly DbContext context;
+        private readonly SocialAppDbContext context;
 
-        public FriendRepository(DbContext context)
+        public FriendRepository(SocialAppDbContext context)
             : base(context)
         {
             this.context = context;

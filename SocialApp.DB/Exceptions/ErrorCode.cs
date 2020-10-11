@@ -18,5 +18,7 @@ namespace SocialApp.DB.Exceptions
 
         public static ErrorCode DomainValidationError => new ErrorCode(nameof(DomainValidationError), HttpStatusCode.UnprocessableEntity);
         public static ErrorCode NotFound => new ErrorCode(nameof(NotFound), HttpStatusCode.NotFound);
+        public static ErrorCode InvalidPassword => new ErrorCode(nameof(InvalidPassword), HttpStatusCode.NotFound);
+        public static ErrorCode InvalidUserClaim => new ErrorCode(nameof(InvalidUserClaim), HttpStatusCode.Unauthorized);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SocialApp.DB.Domain.Abstract;
 using SocialApp.DB.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Text;
 
 namespace SocialApp.DB.Domain.Concrete
 {
-    internal class SocialAppDbContext : DbContext, IDbContext
+    public class SocialAppDbContext : DbContext
     {
         public DbSet<Chat> Chats { get; set; }
         public DbSet<Comment> Comments { get; set; }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SocialApp.DB.Domain.Abstract;
+using SocialApp.DB.Domain.Concrete;
+using SocialApp.DB.Entities.Abstract;
 using SocialApp.DB.Exceptions;
 using SocialApp.DB.Repositories.Abstract;
 using System;
@@ -12,10 +13,10 @@ namespace SocialApp.DB.Repositories.Concrete
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        private readonly DbContext context;
+        private readonly SocialAppDbContext context;
         private readonly DbSet<T> dbSet;
 
-        public Repository(DbContext context)
+        public Repository(SocialAppDbContext context)
         {
             this.context = context;
             dbSet = context.Set<T>();
@@ -42,6 +43,9 @@ namespace SocialApp.DB.Repositories.Concrete
             return result;
         }
 
+        public async Task AddAsync(T entity)
+            => await Task.FromResult(dbSet.Add(entity));
+
         public async Task UpdateAsync(T entity)
             => await Task.FromResult(dbSet.Update(entity));
 
@@ -50,7 +54,7 @@ namespace SocialApp.DB.Repositories.Concrete
 
         public async Task SaveChangesAsync()
         {
-            if (await dbContext.SaveChangesAsync() < 0)
+            if (await context.SaveChangesAsync() < 0)
             {
                 throw new Exception("Cannot save changes in db.");
             }

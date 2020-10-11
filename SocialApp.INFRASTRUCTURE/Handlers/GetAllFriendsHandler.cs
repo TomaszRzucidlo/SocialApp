@@ -13,9 +13,13 @@ namespace SocialApp.INFRASTRUCTURE.Handlers
     public class GetAllFriendsHandler : IRequestHandler<GetAllFriendsQuery, List<FriendResponse>>
     {
         private readonly IFriendRepository friendRepository;
+        public GetAllFriendsHandler(IFriendRepository friendRepository)
+        {
+            this.friendRepository = friendRepository;
+        }
         public async Task<List<FriendResponse>> Handle(GetAllFriendsQuery request, CancellationToken cancellationToken)
         {
-            var friends = new List<FriendResponse>();
+            var friends = friendRepository.GetFriends();
 
             return friends;
         }

@@ -19,6 +19,8 @@ namespace SocialApp.DB.Repositories.Abstract
 
         Task UpdateAsync(T entity);
 
+        Task AddAsync(T entity);
+
         Task DeleteAsync(T entity);
 
         Task SaveChangesAsync();

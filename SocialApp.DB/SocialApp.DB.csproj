@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Concrete\Initializers\" />
+    <Folder Include="Domain\Initializers\" />
   </ItemGroup>
 
 </Project>

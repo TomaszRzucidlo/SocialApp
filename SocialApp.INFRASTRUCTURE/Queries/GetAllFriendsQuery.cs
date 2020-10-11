@@ -8,6 +8,10 @@ namespace SocialApp.INFRASTRUCTURE.Queries
 {
     public class GetAllFriendsQuery : IRequest<List<FriendResponse>>
     {
-
+        public Guid MyGuid { get; set; }
+        public GetAllFriendsQuery(Guid myGuid)
+        {
+            MyGuid = myGuid;
+        }
     }
 }

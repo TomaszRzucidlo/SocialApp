@@ -9,5 +9,8 @@ namespace SocialApp.DB.Entities
     {
         public string Message { get; protected set; }
         public DateTime GeneratedAt { get; protected set; }
+        public bool IsOpen { get; protected set; }
+        public long UserId { get; protected set; }
+        public virtual User User { get; protected set; }
     }
 }
