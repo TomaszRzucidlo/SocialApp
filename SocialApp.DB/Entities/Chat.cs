@@ -9,6 +9,6 @@ namespace SocialApp.DB.Entities
     {
         public string Name { get; protected set; }
         public bool IsGroup { get; protected set; }
-        public List<Message> Messages { get; protected set; }
+        public virtual List<Message> Messages { get; protected set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SocialApp.DB.Domain.Configurations;
 using SocialApp.DB.Entities;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace SocialApp.DB.Domain.Concrete
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new FriendConfiguration());
         }
     }
 }

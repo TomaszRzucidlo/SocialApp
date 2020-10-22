@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SocialApp.DB.Entities.Abstract;
+﻿using SocialApp.DB.Entities.Abstract;
 using SocialApp.DB.Enums;
 using SocialApp.DB.Extensions.Concrete;
 using System;
@@ -20,8 +19,16 @@ namespace SocialApp.DB.Entities
         public string AccountToken { get; protected set; }
         public UserStatus Status { get; protected set; }
         public string FullName => $"{FirstName} {LastName}";
-        public List<UserChat> Chats { get; protected set; }
-        public List<Notification> Notifications { get; protected set; }
+        public virtual List<UserChat> Chats { get; protected set; }
+        public virtual List<Notification> Notifications { get; protected set; }
+        public virtual List<Friend> FriendsSectionOne { get; protected set; }
+        public virtual List<Friend> FriendsSectionTwo { get; protected set; }
+
+
+        public User()
+        {
+
+        }
 
         public User(string email, string firstName, string lastName, string password, PasswordManager passwordManager)
         {

@@ -49,9 +49,9 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
-              "version": "[5.5.1, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [
@@ -65,9 +65,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -141,9 +138,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -200,6 +194,10 @@
               "target": "Package",
               "version": "[5.2.0, )"
             },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[8.1.0, )"
@@ -207,6 +205,18 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [

@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Identity;
 using SocialApp.DB.Entities;
 using SocialApp.DB.Exceptions;
 using SocialApp.DB.Extensions.Abstract;

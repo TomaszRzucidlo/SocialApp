@@ -1,5 +1,5 @@
 ﻿using SocialApp.DB.Entities;
-using SocialApp.INFRASTRUCTURE.Resonses;
+using SocialApp.INFRASTRUCTURE.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +8,6 @@ namespace SocialApp.INFRASTRUCTURE.Mappers.Abstract
 {
     public interface IFriendMapper
     {
-        FriendResponse GenerateFriend(User friend);
+        FriendDTO GenerateFriend(User friend);
     }
 }

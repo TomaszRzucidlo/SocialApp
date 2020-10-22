@@ -7,7 +7,7 @@ namespace SocialApp.DB.Entities
 {
     public class Comment : Entity
     {
-        public long UserId { get; protected set; }
+        public Guid UserId { get; protected set; }
         public virtual User User { get; protected set; }
         public string Message { get; protected set; }
         public DateTime AddedAt { get; protected set; }
