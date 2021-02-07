@@ -15,8 +15,8 @@ namespace SocialApp.INFRASTRUCTURE.Handlers
     public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, Unit>
     {
         private readonly IUserRepository userRepository;
-        private readonly PasswordManager passwordManager;
-        public RegisterUserHandler(IUserRepository userRepository, PasswordManager passwordManager)
+        private readonly IPasswordManager passwordManager;
+        public RegisterUserHandler(IUserRepository userRepository, IPasswordManager passwordManager)
         {
             this.userRepository = userRepository;
             this.passwordManager = passwordManager;

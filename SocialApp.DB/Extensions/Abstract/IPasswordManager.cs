@@ -6,7 +6,7 @@ namespace SocialApp.DB.Extensions.Abstract
 {
     public interface IPasswordManager
     {
-        void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt);
+        Tuple<byte[], byte[]> CreatePasswordHash(string password);
         bool VerifyPassword(string password, byte[] passwordHash, byte[] passwordSalt);
     }
 }

@@ -19,10 +19,11 @@ namespace SocialApp.INFRASTRUCTURE.Handlers
         private readonly IUserRepository userRepository;
         private readonly IPasswordManager passwordManager;
         private readonly ITokenManager tokenManager;
-        public LoginUserHandler(IUserRepository userRepository, IPasswordManager passwordManager)
+        public LoginUserHandler(IUserRepository userRepository, IPasswordManager passwordManager, ITokenManager tokenManager)
         {
             this.userRepository = userRepository;
             this.passwordManager = passwordManager;
+            this.tokenManager = tokenManager;
         }
 
         public async Task<TokenDTO> Handle(LoginUserQuery query, CancellationToken cancellationToken)

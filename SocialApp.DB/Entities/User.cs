@@ -1,5 +1,6 @@
 ﻿using SocialApp.DB.Entities.Abstract;
 using SocialApp.DB.Enums;
+using SocialApp.DB.Extensions.Abstract;
 using SocialApp.DB.Extensions.Concrete;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace SocialApp.DB.Entities
 
         }
 
-        public User(string email, string firstName, string lastName, string password, PasswordManager passwordManager)
+        public User(string email, string firstName, string lastName, string password, IPasswordManager passwordManager)
         {
             Email = email;
             SetPassword(password, passwordManager);
@@ -40,11 +41,11 @@ namespace SocialApp.DB.Entities
             Status = UserStatus.Offline;
         }
 
-        public void SetPassword(string password, PasswordManager passwordManager)
+        public void SetPassword(string password, IPasswordManager passwordManager)
         {
-            passwordManager.CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
-            PasswordHash = passwordHash;
-            Salt = passwordSalt;
+            Tuple<byte[], byte[]> passwordItems = passwordManager.CreatePasswordHash(password);
+            PasswordHash = passwordItems.Item1;
+            Salt = passwordItems.Item2;
         }
     }
 }

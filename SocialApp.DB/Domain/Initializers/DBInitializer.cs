@@ -20,11 +20,11 @@ namespace SocialApp.DB.Domain.Initializers
         public async Task Seed()
         {
             List<User> users = UserInitializer.Seed();
-            List<Post> posts = PostInitializer.Seed(users);
-            List<Friend> friends = FriendInitializer.Seed(users.Select(u => u.Id).ToArray());
-
             await context.AddRangeAsync(users);
             await context.SaveChangesAsync();
+
+            List<Post> posts = PostInitializer.Seed(users);
+            List<Friend> friends = FriendInitializer.Seed(users.Select(u => u.Id).ToArray());
             await context.AddRangeAsync(posts);
             await context.SaveChangesAsync();
             await context.AddRangeAsync(friends);

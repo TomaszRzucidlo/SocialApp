@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -18,7 +19,14 @@ using Microsoft.OpenApi.Models;
 using SocialApp.DB.Domain.Concrete;
 using SocialApp.DB.Domain.Initializers;
 using SocialApp.DB.Extensions;
+using SocialApp.DB.Extensions.Abstract;
+using SocialApp.DB.Extensions.Concrete;
 using SocialApp.DB.Modules;
+using SocialApp.DB.Repositories.Abstract;
+using SocialApp.DB.Repositories.Concrete;
+using SocialApp.INFRASTRUCTURE.Extensions.Abstract;
+using SocialApp.INFRASTRUCTURE.Extensions.Concrete;
+using SocialApp.INFRASTRUCTURE.Handlers;
 using SocialApp.INFRASTRUCTURE.Modules;
 
 namespace SocialApp
@@ -45,19 +53,13 @@ namespace SocialApp
             //services.AddSwagger();
             services.AddMemoryCache();
             services.AddHttpContextAccessor();
-            services.AddMediatR(typeof(Startup));
             services.AddTransient<DBInitializer>();
-            services.AddScoped<MappersModule>();
-            services.AddScoped<RepositoriesModule>();
-            services.AddScoped<ExtensionsModule>();
-            //var builder = new ContainerBuilder();
-            //builder.Populate(services);
-            //builder.RegisterModule<RepositoriesModule>();
-            //builder.RegisterModule<MappersModule>();
-            //builder.RegisterModule<ServicesModule>();
-
-            //Container = builder.Build();
-            //return new AutofacServiceProvider(Container);
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(IPasswordManager), typeof(PasswordManager));
+            services.AddScoped(typeof(ITokenManager), typeof(TokenManager));
+            services.AddMediatR(typeof(RegisterUserHandler).GetTypeInfo().Assembly);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,12 +82,6 @@ namespace SocialApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SocialApp");
-            //});
-            //app.UseAuthorization();
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>

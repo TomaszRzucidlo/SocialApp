@@ -7,13 +7,17 @@ namespace SocialApp.DB.Extensions.Concrete
 {
     public class PasswordManager : IPasswordManager
     {
-        public void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        public Tuple<byte[], byte[]> CreatePasswordHash(string password)
         {
+            byte[] salt, hash;
+
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                salt = hmac.Key;
+                hash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
+
+            return new Tuple<byte[], byte[]>(salt, hash);
         }
 
         public bool VerifyPassword(string password, byte[] passwordHash, byte[] passwordSalt)

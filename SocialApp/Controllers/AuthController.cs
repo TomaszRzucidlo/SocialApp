@@ -20,6 +20,7 @@ namespace SocialApp.API.Controllers
             this.mediator = mediator;
         }
 
+        [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterUserCommand command)
         {
             var result = await mediator.Send(command);
@@ -27,7 +28,7 @@ namespace SocialApp.API.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpPost("log-in")]
         public async Task<IActionResult> LogIn(LoginUserQuery query)
         {
             var result = await mediator.Send(query);
