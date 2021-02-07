@@ -7,9 +7,8 @@ namespace SocialApp.DB.Entities
 {
     public class Like : Entity
     {
-        public long Id { get; protected set; }
-        public long UserId { get; protected set; }
-        public virtual User User { get; protected set; }
+        public Guid PostId { get; protected set; }
+        public virtual Post Post { get; protected set; }
         public DateTime AddedAt { get; protected set; }
     }
 }

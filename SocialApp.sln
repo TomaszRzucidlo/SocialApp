@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialApp.API", "SocialApp\SocialApp.API.csproj", "{CA288B6B-8251-4382-B796-BD81A67C56A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialApp.API", "SocialApp\SocialApp.API.csproj", "{CA288B6B-8251-4382-B796-BD81A67C56A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialApp.Test", "SocialApp.Test\SocialApp.Test.csproj", "{152DCB79-8871-48A2-B0DB-605EF3728A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialApp.UnitTests", "SocialApp.Test\SocialApp.UnitTests.csproj", "{152DCB79-8871-48A2-B0DB-605EF3728A1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialApp.DB", "SocialApp.DB\SocialApp.DB.csproj", "{192E4799-B641-44AB-A6F3-4F3EDB274265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialApp.DB", "SocialApp.DB\SocialApp.DB.csproj", "{192E4799-B641-44AB-A6F3-4F3EDB274265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialApp.INFRASTRUCTURE", "SocialApp.INFRASTRUCTURE\SocialApp.INFRASTRUCTURE.csproj", "{B4E7D8F8-6195-4BF8-9677-913C374CCDE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialApp.INFRASTRUCTURE", "SocialApp.INFRASTRUCTURE\SocialApp.INFRASTRUCTURE.csproj", "{B4E7D8F8-6195-4BF8-9677-913C374CCDE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialApp.IntegrationTests", "SocialApp.IntegrationTests\SocialApp.IntegrationTests.csproj", "{07E2EF98-853A-41B1-9E95-C892640E3F80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B4E7D8F8-6195-4BF8-9677-913C374CCDE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E7D8F8-6195-4BF8-9677-913C374CCDE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E7D8F8-6195-4BF8-9677-913C374CCDE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E2EF98-853A-41B1-9E95-C892640E3F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E2EF98-853A-41B1-9E95-C892640E3F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E2EF98-853A-41B1-9E95-C892640E3F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E2EF98-853A-41B1-9E95-C892640E3F80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

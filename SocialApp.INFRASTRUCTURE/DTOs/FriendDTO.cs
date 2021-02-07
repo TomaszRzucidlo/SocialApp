@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialApp.INFRASTRUCTURE.Resonses
+namespace SocialApp.INFRASTRUCTURE.DTOs
 {
-    public class FriendResponse
+    public class FriendDTO
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

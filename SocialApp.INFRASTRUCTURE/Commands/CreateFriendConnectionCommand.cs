@@ -1,13 +1,13 @@
 ﻿using MediatR;
-using SocialApp.INFRASTRUCTURE.Resonses;
+using SocialApp.INFRASTRUCTURE.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SocialApp.INFRASTRUCTURE.Commands
 {
-    public class CreateFriendConnectionCommand : IRequest<FriendResponse>
+    public class CreateFriendConnectionCommand : IRequest<FriendDTO>
     {
-        public string FriendGuid { get; set; }
+        public Guid FriendId { get; set; }
     }
 }

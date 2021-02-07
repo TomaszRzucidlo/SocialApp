@@ -3,3 +3,10 @@ C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\bin\Debug\netcore
 C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.AssemblyInfoInputs.cache
 C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.AssemblyInfo.cs
 C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.csprojAssemblyReference.cache
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\bin\Debug\netcoreapp3.1\SocialApp.DB.dll
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\bin\Debug\netcoreapp3.1\SocialApp.DB.pdb
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.csproj.CopyComplete
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\bin\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.pdb
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.csproj.CoreCompileInputs.cache
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.dll
+C:\Users\Tomek\source\repos\SocialApp\SocialApp.INFRASTRUCTURE\obj\Debug\netcoreapp3.1\SocialApp.INFRASTRUCTURE.pdb
