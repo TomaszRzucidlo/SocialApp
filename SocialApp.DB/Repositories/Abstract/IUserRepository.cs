@@ -9,5 +9,6 @@ namespace SocialApp.DB.Repositories.Abstract
     public interface IUserRepository : IRepository<User>
     {
         Task<User> GetByEmail(string email);
+        Task<bool> IsUserExist(string email);
     }
 }

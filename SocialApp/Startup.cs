@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +18,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SocialApp.API.Middleware;
+using SocialApp.API.Validators;
 using SocialApp.DB.Domain.Concrete;
 using SocialApp.DB.Domain.Initializers;
 using SocialApp.DB.Extensions;
@@ -59,7 +63,18 @@ namespace SocialApp
             services.AddScoped(typeof(ITokenManager), typeof(TokenManager));
             services.AddMediatR(typeof(RegisterUserHandler).GetTypeInfo().Assembly);
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterUserCommandValidator>());
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:8080")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                                  });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,9 +95,10 @@ namespace SocialApp
             }
 
             app.UseHttpsRedirection();
-
+            app.UseMiddleware<GlobalExceptionMiddleware>();
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using SocialApp.DB.Entities;
+using SocialApp.DB.Exceptions;
 using SocialApp.DB.Extensions.Abstract;
 using SocialApp.DB.Extensions.Concrete;
 using SocialApp.DB.Repositories.Abstract;
@@ -24,6 +25,11 @@ namespace SocialApp.INFRASTRUCTURE.Handlers
 
         public async Task<Unit> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
         {
+            if(await userRepository.IsUserExist(command.Email))
+            {
+                throw new AppException(ErrorCode.UserExist);
+            }
+
             User user = new User(command.Email, command.FirstName, command.LastName, command.Password, passwordManager);
 
             await userRepository.AddAsync(user);
