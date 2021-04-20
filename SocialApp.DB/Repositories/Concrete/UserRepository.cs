@@ -21,5 +21,8 @@ namespace SocialApp.DB.Repositories.Concrete
 
         public async Task<User> GetByEmail(string email)
             => await context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+        public async Task<bool> IsUserExist(string email)
+            => await context.Users.AnyAsync(u => u.Email == email);
     }
 }
