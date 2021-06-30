@@ -22,7 +22,7 @@ namespace SocialApp.API.Controllers
         {
             this.mediator = mediator;
         }
-        [HttpGet]
+        [HttpGet("get-all-friends")]
         public async Task<IActionResult> GetAllFriends()
         {
             var query = new GetAllFriendsQuery(User.GetUserId());

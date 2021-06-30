@@ -7,6 +7,6 @@ namespace SocialApp.INFRASTRUCTURE.Extensions.Abstract
 {
     public interface ITokenManager
     {
-        TokenDTO GenerateToken(Guid userId, string email);
+        string GenerateToken(Guid userId, string email);
     }
 }

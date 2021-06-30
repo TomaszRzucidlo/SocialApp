@@ -23,7 +23,7 @@ namespace SocialApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterUserCommand command)
         {
-            var result = await mediator.Send(command);
+            await mediator.Send(command);
 
             return Ok();
         }

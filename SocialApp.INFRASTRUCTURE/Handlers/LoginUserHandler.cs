@@ -40,7 +40,9 @@ namespace SocialApp.INFRASTRUCTURE.Handlers
                 throw new AppException(ErrorCode.InvalidPassword);
             }
 
-            return tokenManager.GenerateToken(user.Id, user.Email);
+            var token = tokenManager.GenerateToken(user.Id, user.Email);
+
+            return new TokenDTO(token, user.FirstName, user.LastName, user.Image);
         }
     }
 }
