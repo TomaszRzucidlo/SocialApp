@@ -43,9 +43,9 @@ namespace SocialApp.DB.Entities
 
         public void SetPassword(string password, IPasswordManager passwordManager)
         {
-            Tuple<byte[], byte[]> passwordItems = passwordManager.CreatePasswordHash(password);
-            PasswordHash = passwordItems.Item1;
-            Salt = passwordItems.Item2;
+            passwordManager.CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+            PasswordHash = passwordHash;
+            Salt = passwordSalt;
         }
     }
 }

@@ -13,9 +13,9 @@ namespace SocialApp.DB.Domain.Initializers
             List<User> users = new List<User>();
             PasswordManager passwordManager = new PasswordManager();
 
-            users.Add(new User("Tomek.Kowalski@socialapp.com", "Tomek", "Kowalski", "hardpassword", passwordManager));
-            users.Add(new User("Jakub.Kozlowski@socialapp.com", "Jakub", "Kozlowski", "hardpassword", passwordManager));
-            users.Add(new User("Nikola.Sawicka@socialapp.com", "Nikola", "Sawicka", "hardpassword", passwordManager));
+            users.Add(new User("Tomek.Kowalski@socialapp.com", "Tomek", "Kowalski", "qwe123QWE!@#", passwordManager));
+            users.Add(new User("Jakub.Kozlowski@socialapp.com", "Jakub", "Kozlowski", "qwe123QWE!@#", passwordManager));
+            users.Add(new User("Nikola.Sawicka@socialapp.com", "Nikola", "Sawicka", "qwe123QWE!@#", passwordManager));
 
             return users;
         }

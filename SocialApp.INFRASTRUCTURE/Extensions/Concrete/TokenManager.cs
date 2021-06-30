@@ -19,27 +19,29 @@ namespace SocialApp.INFRASTRUCTURE.Extensions.Concrete
             this.settings = options.Value;
         }
 
-        public TokenDTO GenerateToken(Guid userId, string email)
+        public string GenerateToken(Guid userId, string email)
         {
             DateTime now = DateTime.UtcNow;
-            var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.Sub, email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat,
-                new DateTimeOffset(now).ToUnixTimeSeconds().ToString())
-            };
+            var clims = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Sub, email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Iat, new DateTimeOffset(now).ToUnixTimeSeconds().ToString())
+                };
 
-            var tokenExpirationMins = now.AddMinutes(settings.ExpiresMinutes);
-            var issuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings.SecretKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings.SecretKey));
             var token = new JwtSecurityToken(
                 issuer: settings.Issuer,
-                claims: claims, notBefore: now,
-                expires: tokenExpirationMins,
-                signingCredentials: new SigningCredentials(issuerSigningKey, SecurityAlgorithms.HmacSha256));
-            var encodedToken = new JwtSecurityTokenHandler().WriteToken(token);
+                audience: settings.Issuer,
+                claims: clims,
+                expires: DateTime.Now.AddDays(30),
+                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
+                );
 
-            return new TokenDTO(encodedToken, email);
+            string tokenAsString = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return tokenAsString;
         }
     }
 }
